@@ -18,6 +18,10 @@ import urllib.error
 class ThreatCollector:
     """Collects and processes threat intelligence data."""
     
+    # Constants
+    KEV_DEFAULT_SEVERITY = 9.0
+    MAX_EVENTS_FOR_SCORING = 10
+    
     def __init__(self):
         self.events = []
         self.category_scores = {}
@@ -28,7 +32,7 @@ class ThreatCollector:
         events = []
         try:
             # NVD API endpoint for recent CVEs (last 7 days)
-            start_date = (datetime.now(timezone.utc) - timedelta(days=7)).strftime('%Y-%m-%dT%H:%M:%S.000')
+            start_date = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat(timespec='milliseconds')
             
             url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate={start_date}&resultsPerPage=20"
             
@@ -105,7 +109,7 @@ class ThreatCollector:
                             'id': vuln.get('cveID', 'Unknown'),
                             'type': 'exploited',
                             'category': 'KEV',
-                            'severity': 9.0,  # KEVs are high priority
+                            'severity': self.KEV_DEFAULT_SEVERITY,  # KEVs are high priority
                             'description': vuln.get('vulnerabilityName', 'No description')[:200],
                             'timestamp': vuln.get('dateAdded', datetime.now(timezone.utc).isoformat())
                         })
@@ -116,7 +120,7 @@ class ThreatCollector:
                 'id': 'SYNTHETIC-KEV-001',
                 'type': 'exploited',
                 'category': 'KEV',
-                'severity': 9.0,
+                'severity': self.KEV_DEFAULT_SEVERITY,
                 'description': 'Sample KEV (fetch failed)',
                 'timestamp': datetime.now(timezone.utc).isoformat()
             })
@@ -176,7 +180,7 @@ class ThreatCollector:
             if severities:
                 # Average severity, weighted by count
                 avg_severity = sum(severities) / len(severities)
-                count_factor = min(len(severities) / 10, 1.0)  # Cap at 10 events
+                count_factor = min(len(severities) / self.MAX_EVENTS_FOR_SCORING, 1.0)  # Cap at max events
                 
                 # Scale to 0-100
                 score = (avg_severity / 10.0) * 100 * (0.7 + 0.3 * count_factor)

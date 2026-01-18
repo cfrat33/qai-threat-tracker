@@ -413,12 +413,19 @@
             const errorDiv = document.getElementById('error');
             errorDiv.style.display = 'block';
             
-            // Use innerHTML with escaped content for maintainability
-            const escapedMessage = escapeHtml(message);
-            errorDiv.innerHTML = `
-                <strong>⚠️ Error:</strong> ${escapedMessage}
-                <br><small>The dashboard will attempt to reload the data automatically.</small>
-            `;
+            // Build elements safely using DOM methods
+            errorDiv.innerHTML = '';
+            
+            const strong = document.createElement('strong');
+            strong.textContent = '⚠️ Error:';
+            errorDiv.appendChild(strong);
+            
+            errorDiv.appendChild(document.createTextNode(' ' + message));
+            errorDiv.appendChild(document.createElement('br'));
+            
+            const small = document.createElement('small');
+            small.textContent = 'The dashboard will attempt to reload the data automatically.';
+            errorDiv.appendChild(small);
         }
         
         // Hide error
