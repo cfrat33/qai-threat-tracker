@@ -124,5 +124,14 @@
       "KEV": 76.5,
       "EPSS": 62.05
     }
+  },
+  {
+    "timestamp": "2026-01-18T20:04:01.072720+00:00",
+    "composite_score": 66.36,
+    "category_scores": {
+      "CVE": 54.75,
+      "KEV": 76.5,
+      "EPSS": 62.05
+    }
   }
 ]
