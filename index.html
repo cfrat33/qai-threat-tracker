@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAI Threat Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .status-strip {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .status-indicators {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .status-icon {
+            font-size: 1.2rem;
+        }
+        
+        .status-available { color: #28a745; }
+        .status-unavailable { color: #dc3545; }
+        
+        .last-updated {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .error-toggle {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .error-toggle:hover {
+            background: #c82333;
+        }
+        
+        .error-dropdown {
+            display: none;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        .error-dropdown.show {
+            display: block;
+        }
+        
+        .error-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #856404;
+        }
+        
+        .error-list li {
+            margin: 5px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .error-list li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+        
+        .main-score {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        
+        .score-display {
+            font-size: 6rem;
+            font-weight: bold;
+            line-height: 1;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .score-label {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .score-delta {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .score-delta.positive {
+            color: #dc3545;
+        }
+        
+        .score-delta.negative {
+            color: #28a745;
+        }
+        
+        .category-scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .category-title {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .category-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .category-weight {
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        .trend-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .sparkline {
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            margin-top: 10px;
+        }
+        
+        .sparkline-bar {
+            flex: 1;
+            background: linear-gradient(to top, #667eea, #764ba2);
+            border-radius: 2px 2px 0 0;
+            min-height: 2px;
+            position: relative;
+        }
+        
+        .sparkline-bar:hover {
+            opacity: 0.7;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .events-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .event-item {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .event-id {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .event-score {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .event-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .event-vendor {
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .weights-info {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .weights-info strong {
+            color: #667eea;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ QAI Threat Tracker</h1>
+            <p class="subtitle">Real-time Cyber Threat Intelligence Aggregation</p>
+        </header>
+        
+        <div id="loading" class="loading">
+            Loading threat data...
+        </div>
+        
+        <div id="content" style="display: none;">
+            <!-- Status Strip -->
+            <div class="status-strip">
+                <div class="status-indicators">
+                    <div class="status-item">
+                        <span class="status-icon" id="nvd-status">⚪</span>
+                        <span>NVD</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-icon" id="kev-status">⚪</span>
+                        <span>KEV</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-icon" id="epss-status">⚪</span>
+                        <span>EPSS</span>
+                    </div>
+                </div>
+                <div class="last-updated" id="last-updated">
+                    Last updated: --
+                </div>
+                <button class="error-toggle" id="error-toggle" style="display: none;">
+                    View Errors
+                </button>
+            </div>
+            
+            <div class="error-dropdown" id="error-dropdown">
+                <ul class="error-list" id="error-list"></ul>
+            </div>
+            
+            <!-- Main Score -->
+            <div class="main-score">
+                <div class="score-label">Composite Threat Score</div>
+                <div class="score-display" id="composite-score">--</div>
+                <div class="score-delta" id="score-delta"></div>
+            </div>
+            
+            <!-- Category Scores -->
+            <div class="category-scores">
+                <div class="category-card">
+                    <div class="category-title">CVE Severity</div>
+                    <div class="category-value" id="cve-score" style="color: #ff6b6b;">--</div>
+                    <div class="category-weight">Weight: 30%</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">KEV Urgency</div>
+                    <div class="category-value" id="kev-score" style="color: #ee5a6f;">--</div>
+                    <div class="category-weight">Weight: 50%</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">EPSS Probability</div>
+                    <div class="category-value" id="epss-score" style="color: #f06595;">--</div>
+                    <div class="category-weight">Weight: 20%</div>
+                </div>
+            </div>
+            
+            <!-- 24h Trend -->
+            <div class="trend-section">
+                <div class="section-title">24-Hour Trend</div>
+                <div class="sparkline" id="sparkline"></div>
+                <div class="weights-info">
+                    <strong>Scoring Model:</strong> CVE Severity (30%) + KEV Urgency (50%) + EPSS Probability (20%) = Composite Score (0-100)
+                </div>
+            </div>
+            
+            <!-- Top Events -->
+            <div class="events-grid">
+                <div class="events-card">
+                    <div class="section-title">Top CVEs</div>
+                    <div id="top-cves">No data available</div>
+                </div>
+                <div class="events-card">
+                    <div class="section-title">Recent KEVs</div>
+                    <div id="recent-kevs">No data available</div>
+                </div>
+                <div class="events-card">
+                    <div class="section-title">Data Summary</div>
+                    <div id="data-summary">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let latestData = null;
+        let historyData = null;
+        
+        async function loadData() {
+            try {
+                // Fetch latest.json
+                const latestResponse = await fetch('/latest.json?t=' + Date.now());
+                if (!latestResponse.ok) throw new Error('Failed to load latest.json');
+                latestData = await latestResponse.json();
+                
+                // Fetch history_24h.json
+                try {
+                    const historyResponse = await fetch('/history_24h.json?t=' + Date.now());
+                    if (historyResponse.ok) {
+                        historyData = await historyResponse.json();
+                    }
+                } catch (e) {
+                    console.warn('History data not available:', e);
+                }
+                
+                renderData();
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                
+            } catch (error) {
+                document.getElementById('loading').innerHTML = `
+                    <div class="error-message">
+                        <strong>Error loading threat data:</strong><br>
+                        ${error.message}<br><br>
+                        Please ensure the JSON files are accessible at /latest.json and /history_24h.json
+                    </div>
+                `;
+            }
+        }
+        
+        function renderData() {
+            // Extract data with fallbacks for both new and legacy schema
+            const score = Math.round(latestData.threatScore?.compositeScore ?? latestData.overall_score ?? 0);
+            const categoryScores = latestData.threatScore?.categoryScores ?? latestData.category_scores ?? {};
+            const metadata = latestData.threatScore?.metadata ?? {};
+            
+            // Main score
+            document.getElementById('composite-score').textContent = score;
+            
+            // Category scores
+            document.getElementById('cve-score').textContent = Math.round(categoryScores.cveSeverity ?? categoryScores.cve_severity ?? 0);
+            document.getElementById('kev-score').textContent = Math.round(categoryScores.kevUrgency ?? categoryScores.kev_urgency ?? 0);
+            document.getElementById('epss-score').textContent = Math.round(categoryScores.epssProbability ?? categoryScores.epss_probability ?? 0);
+            
+            // Status indicators
+            const dataStatus = latestData.dataStatus ?? {};
+            updateStatus('nvd-status', dataStatus.nvdAvailable);
+            updateStatus('kev-status', dataStatus.kevAvailable);
+            updateStatus('epss-status', dataStatus.epssAvailable);
+            
+            // Last updated
+            const timestamp = latestData.timestamp;
+            if (timestamp) {
+                const date = new Date(timestamp);
+                document.getElementById('last-updated').textContent = 
+                    `Last updated: ${date.toLocaleString()}`;
+            }
+            
+            // Errors
+            const errors = dataStatus.errors ?? [];
+            if (errors.length > 0) {
+                document.getElementById('error-toggle').style.display = 'block';
+                const errorList = document.getElementById('error-list');
+                errorList.innerHTML = errors.map(err => `<li>${err}</li>`).join('');
+            }
+            
+            // Score delta
+            if (historyData && historyData.entries && historyData.entries.length > 1) {
+                const entries = historyData.entries;
+                const currentScore = entries[entries.length - 1].compositeScore;
+                const previousScore = entries[entries.length - 2].compositeScore;
+                const delta = currentScore - previousScore;
+                
+                if (delta !== 0) {
+                    const deltaEl = document.getElementById('score-delta');
+                    deltaEl.textContent = `${delta > 0 ? '+' : ''}${delta.toFixed(1)} from last update`;
+                    deltaEl.className = 'score-delta ' + (delta > 0 ? 'positive' : 'negative');
+                }
+            }
+            
+            // Sparkline
+            renderSparkline();
+            
+            // Top CVEs
+            const topCVEs = latestData.topVulnerabilities ?? [];
+            if (topCVEs.length > 0) {
+                document.getElementById('top-cves').innerHTML = topCVEs.slice(0, 5).map(cve => `
+                    <div class="event-item">
+                        <div class="event-id">
+                            ${cve.id}
+                            <span class="event-score">${cve.baseScore.toFixed(1)}</span>
+                        </div>
+                        <div class="event-date">${new Date(cve.published).toLocaleDateString()}</div>
+                    </div>
+                `).join('');
+            }
+            
+            // Recent KEVs
+            const recentKEVs = latestData.recentKEVs ?? [];
+            if (recentKEVs.length > 0) {
+                document.getElementById('recent-kevs').innerHTML = recentKEVs.slice(0, 5).map(kev => `
+                    <div class="event-item">
+                        <div class="event-id">${kev.cveID}</div>
+                        <div class="event-vendor">${kev.vendorProject} ${kev.product}</div>
+                        <div class="event-date">Added: ${kev.dateAdded}</div>
+                    </div>
+                `).join('');
+            }
+            
+            // Data summary
+            document.getElementById('data-summary').innerHTML = `
+                <div class="event-item">
+                    <strong>Total CVEs:</strong> ${metadata.cveCount ?? 0}
+                </div>
+                <div class="event-item">
+                    <strong>Total KEVs:</strong> ${metadata.kevCount ?? 0}
+                </div>
+                <div class="event-item">
+                    <strong>EPSS Entries:</strong> ${metadata.epssCount ?? 0}
+                </div>
+                <div class="event-item" style="margin-top: 10px; padding-top: 10px; border-top: 2px solid #eee;">
+                    <strong>Data Sources:</strong><br>
+                    <small>NVD API, CISA KEV, FIRST EPSS</small>
+                </div>
+            `;
+        }
+        
+        function updateStatus(elementId, available) {
+            const el = document.getElementById(elementId);
+            if (available) {
+                el.textContent = '✅';
+                el.className = 'status-icon status-available';
+            } else {
+                el.textContent = '❌';
+                el.className = 'status-icon status-unavailable';
+            }
+        }
+        
+        function renderSparkline() {
+            if (!historyData || !historyData.entries || historyData.entries.length === 0) {
+                document.getElementById('sparkline').innerHTML = '<p style="color: #999;">No trend data available yet</p>';
+                return;
+            }
+            
+            const entries = historyData.entries;
+            const scores = entries.map(e => e.compositeScore);
+            const maxScore = Math.max(...scores, 1);
+            
+            const sparklineHtml = scores.map(score => {
+                const height = (score / maxScore) * 100;
+                return `<div class="sparkline-bar" style="height: ${height}%" title="${score.toFixed(1)}"></div>`;
+            }).join('');
+            
+            document.getElementById('sparkline').innerHTML = sparklineHtml;
+        }
+        
+        // Error toggle
+        document.getElementById('error-toggle').addEventListener('click', () => {
+            document.getElementById('error-dropdown').classList.toggle('show');
+        });
+        
+        // Load data on page load
+        loadData();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(loadData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>

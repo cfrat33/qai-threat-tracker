@@ -8,6 +8,7 @@ computes composite threat scores, and outputs JSON files.
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from typing import Dict, List, Any, Optional
 import requests
@@ -21,6 +22,8 @@ REQUEST_TIMEOUT = 30
 MAX_NVD_RESULTS = 100
 MAX_EPSS_ENTRIES = 1000
 KEV_NORMALIZATION_FACTOR = 10.0  # Normalize KEV count to 0-100 scale
+MAX_RETRIES = 3
+RETRY_DELAY = 2  # seconds
 
 
 class ThreatDataCollector:
@@ -31,6 +34,23 @@ class ThreatDataCollector:
         self.kev_data: List[Dict] = []
         self.epss_data: Dict[str, float] = {}
         self.errors: List[str] = []
+        self.nvd_api_key = os.environ.get('NVD_API_KEY')
+    
+    def _fetch_with_retry(self, url: str, params: Dict = None, headers: Dict = None) -> Optional[requests.Response]:
+        """Fetch URL with retry logic and exponential backoff."""
+        for attempt in range(MAX_RETRIES):
+            try:
+                response = requests.get(url, params=params, headers=headers, timeout=REQUEST_TIMEOUT)
+                response.raise_for_status()
+                return response
+            except requests.exceptions.RequestException as e:
+                if attempt < MAX_RETRIES - 1:
+                    wait_time = RETRY_DELAY * (2 ** attempt)
+                    print(f"Attempt {attempt + 1} failed, retrying in {wait_time}s: {e}", file=sys.stderr)
+                    time.sleep(wait_time)
+                else:
+                    raise
+        return None
         
     def fetch_nvd_recent_cves(self) -> bool:
         """Fetch recent CVEs from NVD API."""
@@ -41,8 +61,14 @@ class ThreatDataCollector:
                 "startIndex": 0
             }
             
-            response = requests.get(NVD_API_URL, params=params, timeout=REQUEST_TIMEOUT)
-            response.raise_for_status()
+            headers = {}
+            if self.nvd_api_key:
+                headers['apiKey'] = self.nvd_api_key
+                print("Using NVD API key for authentication")
+            
+            response = self._fetch_with_retry(NVD_API_URL, params=params, headers=headers)
+            if not response:
+                raise Exception("Failed after retries")
             
             data = response.json()
             vulnerabilities = data.get("vulnerabilities", [])
@@ -84,8 +110,9 @@ class ThreatDataCollector:
         """Fetch Known Exploited Vulnerabilities from CISA."""
         try:
             print("Fetching KEV data...")
-            response = requests.get(KEV_API_URL, timeout=REQUEST_TIMEOUT)
-            response.raise_for_status()
+            response = self._fetch_with_retry(KEV_API_URL)
+            if not response:
+                raise Exception("Failed after retries")
             
             data = response.json()
             vulnerabilities = data.get("vulnerabilities", [])
@@ -113,8 +140,9 @@ class ThreatDataCollector:
             print("Fetching EPSS data...")
             
             # Get EPSS scores for top CVEs
-            response = requests.get(EPSS_API_URL, timeout=REQUEST_TIMEOUT)
-            response.raise_for_status()
+            response = self._fetch_with_retry(EPSS_API_URL)
+            if not response:
+                raise Exception("Failed after retries")
             
             data = response.json()
             epss_entries = data.get("data", [])

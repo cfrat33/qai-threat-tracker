@@ -102,3 +102,35 @@ The system is designed to be resilient:
 - Partial data is published if at least one source succeeds
 - Errors are logged in the `dataStatus.errors` field
 - Fallback output is created if all sources fail
+- Retry logic with exponential backoff for transient failures
+- Optional NVD API key support for better rate limits
+
+## Deployment
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on:
+- Configuring GitHub Secrets for API keys
+- Setting up Turbobuilt or GitHub Pages
+- Verifying the deployment
+- Troubleshooting common issues
+
+**Quick Start:**
+1. Enable GitHub Actions in repository settings
+2. Configure Turbobuilt to serve from repository root
+3. Verify JSON endpoints are accessible at `/latest.json` and `/history_24h.json`
+4. Visit your domain to see the live threat tracker
+
+## Development
+
+### Local Testing
+
+```bash
+pip install -r requirements.txt
+python collector.py
+```
+
+Open `index.html` in a browser with a local server:
+```bash
+python -m http.server 8000
+```
+
+Visit http://localhost:8000
