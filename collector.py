@@ -19,6 +19,8 @@ KEV_API_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vu
 EPSS_API_URL = "https://api.first.org/data/v1/epss"
 REQUEST_TIMEOUT = 30
 MAX_NVD_RESULTS = 100
+MAX_EPSS_ENTRIES = 1000
+KEV_NORMALIZATION_FACTOR = 10.0  # Normalize KEV count to 0-100 scale
 
 
 class ThreatDataCollector:
@@ -51,8 +53,11 @@ class ThreatDataCollector:
                 
                 # Extract metrics
                 metrics = cve_data.get("metrics", {})
-                cvss_v3 = metrics.get("cvssMetricV31", [{}])[0] if metrics.get("cvssMetricV31") else {}
-                cvss_v2 = metrics.get("cvssMetricV2", [{}])[0] if metrics.get("cvssMetricV2") else {}
+                cvss_v3_list = metrics.get("cvssMetricV31", [])
+                cvss_v2_list = metrics.get("cvssMetricV2", [])
+                
+                cvss_v3 = cvss_v3_list[0] if cvss_v3_list else {}
+                cvss_v2 = cvss_v2_list[0] if cvss_v2_list else {}
                 
                 base_score = 0.0
                 if cvss_v3:
@@ -114,7 +119,7 @@ class ThreatDataCollector:
             data = response.json()
             epss_entries = data.get("data", [])
             
-            for entry in epss_entries[:1000]:  # Limit to first 1000
+            for entry in epss_entries[:MAX_EPSS_ENTRIES]:
                 cve_id = entry.get("cve", "")
                 epss_score = float(entry.get("epss", 0.0))
                 self.epss_data[cve_id] = epss_score
@@ -144,7 +149,7 @@ class ThreatDataCollector:
         # KEV Urgency Score (0-100 based on number of KEV entries)
         # More KEVs = higher urgency
         kev_count = len(self.kev_data)
-        kev_urgency_score = min(100, (kev_count / 10.0) * 100)  # Normalize to 100
+        kev_urgency_score = min(100, (kev_count / KEV_NORMALIZATION_FACTOR) * 100)
         
         # EPSS Probability Score (0-100 based on average EPSS)
         if self.epss_data:
@@ -175,15 +180,17 @@ class ThreatDataCollector:
     
     def generate_latest_json(self, output_path: str = "latest.json"):
         """Generate latest.json with current threat data."""
-        timestamp = datetime.now(timezone.utc).isoformat()
+        timestamp = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         
         threat_score = self.compute_threat_score()
         
         # Get top 10 recent CVEs
         top_cves = sorted(self.nvd_data, key=lambda x: x["baseScore"], reverse=True)[:10]
         
-        # Get recent KEV entries (last 10)
-        recent_kevs = sorted(self.kev_data, key=lambda x: x["dateAdded"], reverse=True)[:10]
+        # Get recent KEV entries (last 10), sorted by dateAdded
+        # Filter out entries with invalid dates
+        valid_kevs = [kev for kev in self.kev_data if kev.get("dateAdded")]
+        recent_kevs = sorted(valid_kevs, key=lambda x: x["dateAdded"], reverse=True)[:10]
         
         latest_data = {
             "timestamp": timestamp,
@@ -229,10 +236,15 @@ class ThreatDataCollector:
         cutoff_time = datetime.now(timezone.utc)
         filtered_entries = []
         for entry in history_entries:
-            entry_time = datetime.fromisoformat(entry["timestamp"].replace('Z', '+00:00'))
-            hours_diff = (cutoff_time - entry_time).total_seconds() / 3600
-            if hours_diff <= 24:
-                filtered_entries.append(entry)
+            try:
+                # Handle both 'Z' and '+00:00' timezone formats
+                timestamp_str = entry["timestamp"].replace('Z', '+00:00')
+                entry_time = datetime.fromisoformat(timestamp_str)
+                hours_diff = (cutoff_time - entry_time).total_seconds() / 3600
+                if hours_diff <= 24:
+                    filtered_entries.append(entry)
+            except (ValueError, KeyError) as e:
+                print(f"Skipping invalid history entry: {e}", file=sys.stderr)
         
         history_data = {
             "lastUpdated": latest_data["timestamp"],
@@ -282,7 +294,7 @@ class ThreatDataCollector:
     
     def _create_fallback_output(self):
         """Create minimal fallback output when all sources fail."""
-        timestamp = datetime.now(timezone.utc).isoformat()
+        timestamp = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         fallback_data = {
             "timestamp": timestamp,
             "threatScore": {
