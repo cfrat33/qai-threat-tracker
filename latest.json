@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-01-18T10:13:40.845983Z",
+  "threatScore": {
+    "compositeScore": 0.0,
+    "categoryScores": {
+      "cveSeverity": 0.0,
+      "kevUrgency": 0.0,
+      "epssProbability": 0.0
+    },
+    "metadata": {
+      "cveCount": 0,
+      "kevCount": 0,
+      "epssCount": 0
+    }
+  },
+  "topVulnerabilities": [],
+  "recentKEVs": [],
+  "dataStatus": {
+    "nvdAvailable": false,
+    "kevAvailable": false,
+    "epssAvailable": false,
+    "errors": [
+      "NVD fetch failed: HTTPSConnectionPool(host='services.nvd.nist.gov', port=443): Max retries exceeded with url: /rest/json/cves/2.0?resultsPerPage=100&startIndex=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f2f041aa510>: Failed to resolve 'services.nvd.nist.gov' ([Errno -5] No address associated with hostname)\"))",
+      "KEV fetch failed: HTTPSConnectionPool(host='www.cisa.gov', port=443): Max retries exceeded with url: /sites/default/files/feeds/known_exploited_vulnerabilities.json (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f2f041ab740>: Failed to resolve 'www.cisa.gov' ([Errno -5] No address associated with hostname)\"))",
+      "EPSS fetch failed: HTTPSConnectionPool(host='api.first.org', port=443): Max retries exceeded with url: /data/v1/epss (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f2f041a9f10>: Failed to resolve 'api.first.org' ([Errno -5] No address associated with hostname)\"))"
+    ]
+  }
+}
