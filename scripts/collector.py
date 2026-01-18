@@ -8,7 +8,8 @@ scores categories, and generates JSON files for dashboard visualization.
 import json
 import os
 import sys
-from datetime import datetime, timezone
+import traceback
+from datetime import datetime, timezone, timedelta
 from typing import Dict, List, Any
 import urllib.request
 import urllib.error
@@ -27,7 +28,6 @@ class ThreatCollector:
         events = []
         try:
             # NVD API endpoint for recent CVEs (last 7 days)
-            from datetime import timedelta
             start_date = (datetime.now(timezone.utc) - timedelta(days=7)).strftime('%Y-%m-%dT%H:%M:%S.000')
             
             url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate={start_date}&resultsPerPage=20"
@@ -304,7 +304,6 @@ def main():
         return 0
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
-        import traceback
         traceback.print_exc()
         return 1
 
