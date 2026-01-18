@@ -1,0 +1,3 @@
+# QAI Threat Tracker - Python Dependencies
+# The collector uses only standard library modules (urllib, json, datetime)
+# No external dependencies required for basic functionality

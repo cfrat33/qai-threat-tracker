@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-01-18T10:04:35.585137+00:00",
+  "composite_score": 60.95,
+  "category_scores": {
+    "CVE": 54.75,
+    "KEV": 65.7,
+    "EPSS": 62.05
+  },
+  "top_events": [
+    {
+      "id": "SYNTHETIC-KEV-001",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Sample KEV (fetch failed)",
+      "timestamp": "2026-01-18T10:04:35.585028+00:00"
+    },
+    {
+      "id": "EPSS-HIGH-001",
+      "type": "epss",
+      "category": "EPSS",
+      "severity": 8.5,
+      "description": "High EPSS score indicator (sample data)",
+      "timestamp": "2026-01-18T10:04:35.585044+00:00"
+    },
+    {
+      "id": "SYNTHETIC-001",
+      "type": "vulnerability",
+      "category": "CVE",
+      "severity": 7.5,
+      "description": "Sample vulnerability (NVD fetch failed)",
+      "timestamp": "2026-01-18T10:04:35.584249+00:00"
+    }
+  ],
+  "event_count": 3
+}
