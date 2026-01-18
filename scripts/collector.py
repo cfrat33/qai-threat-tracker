@@ -26,8 +26,11 @@ class ThreatCollector:
         """Fetch recent CVE data from NVD API."""
         events = []
         try:
-            # NVD API endpoint for recent CVEs
-            url = "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20"
+            # NVD API endpoint for recent CVEs (last 7 days)
+            from datetime import timedelta
+            start_date = (datetime.now(timezone.utc) - timedelta(days=7)).strftime('%Y-%m-%dT%H:%M:%S.000')
+            
+            url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate={start_date}&resultsPerPage=20"
             
             req = urllib.request.Request(url)
             req.add_header('User-Agent', 'QAI-Threat-Tracker/1.0')
@@ -185,27 +188,21 @@ class ThreatCollector:
     
     def compute_composite_score(self, category_scores: Dict[str, float]) -> float:
         """Compute weighted composite threat score."""
-        # Weights for different categories
+        # Weights for different categories (must sum to 1.0)
         weights = {
             'CVE': 0.4,
             'KEV': 0.5,
             'EPSS': 0.1
         }
         
-        total_weight = 0
         weighted_sum = 0
         
-        for category, score in category_scores.items():
-            weight = weights.get(category, 0.1)
+        # Use fixed weight sum of 1.0 to avoid artificial inflation
+        for category, weight in weights.items():
+            score = category_scores.get(category, 0.0)
             weighted_sum += score * weight
-            total_weight += weight
         
-        if total_weight > 0:
-            composite = weighted_sum / total_weight
-        else:
-            composite = 0.0
-        
-        return round(composite, 2)
+        return round(weighted_sum, 2)
     
     def write_latest_json(self, events: List[Dict[str, Any]], 
                           category_scores: Dict[str, float],

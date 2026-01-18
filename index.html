@@ -288,6 +288,12 @@
         let historyData = null;
         
         // Utility functions
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
         function getSeverityClass(severity) {
             if (severity >= 7) return 'high';
             if (severity >= 4) return 'medium';
@@ -358,7 +364,7 @@
                 const item = document.createElement('div');
                 item.className = 'subscore-item';
                 item.innerHTML = `
-                    <span class="subscore-name">${category}</span>
+                    <span class="subscore-name">${escapeHtml(category)}</span>
                     <span class="subscore-value ${getScoreClass(score)}">${Math.round(score)}</span>
                 `;
                 container.appendChild(item);
@@ -383,11 +389,11 @@
                 
                 item.innerHTML = `
                     <div class="event-header">
-                        <span class="event-id">${event.id || 'Unknown'}</span>
+                        <span class="event-id">${escapeHtml(event.id || 'Unknown')}</span>
                         <span class="event-severity ${severityClass}">${(event.severity || 0).toFixed(1)}</span>
                     </div>
-                    <div class="event-description">${event.description || 'No description available'}</div>
-                    <span class="event-category">${event.category || 'Unknown'}</span>
+                    <div class="event-description">${escapeHtml(event.description || 'No description available')}</div>
+                    <span class="event-category">${escapeHtml(event.category || 'Unknown')}</span>
                 `;
                 container.appendChild(item);
             });
@@ -406,10 +412,23 @@
         function showError(message) {
             const errorDiv = document.getElementById('error');
             errorDiv.style.display = 'block';
-            errorDiv.innerHTML = `
-                <strong>⚠️ Error:</strong> ${message}
-                <br><small>The dashboard will attempt to reload the data automatically.</small>
-            `;
+            
+            // Create elements safely using textContent
+            const strong = document.createElement('strong');
+            strong.textContent = '⚠️ Error:';
+            
+            const messageText = document.createTextNode(' ' + message);
+            
+            const br = document.createElement('br');
+            
+            const small = document.createElement('small');
+            small.textContent = 'The dashboard will attempt to reload the data automatically.';
+            
+            errorDiv.innerHTML = '';
+            errorDiv.appendChild(strong);
+            errorDiv.appendChild(messageText);
+            errorDiv.appendChild(br);
+            errorDiv.appendChild(small);
         }
         
         // Hide error
