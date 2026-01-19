@@ -38,8 +38,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp latest.json _site/
-          cp history_24h.json _site/
+          [ -f latest.json ] && cp latest.json _site/ || echo "{}" > _site/latest.json
+          [ -f history_24h.json ] && cp history_24h.json _site/ || echo "[]" > _site/history_24h.json
           cp LICENSE _site/
           cp README.md _site/
       
