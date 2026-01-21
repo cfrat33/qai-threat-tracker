@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T20:07:57.247012+00:00",
+  "timestamp": "2026-01-21T21:07:48.763649+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-20045",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Cisco Unified Communications Products Code Injection Vulnerability",
+      "timestamp": "2026-01-21"
+    },
     {
       "id": "CVE-2026-20805",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-01-07"
     },
     {
-      "id": "CVE-2025-14847",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "MongoDB and MongoDB Server Improper Handling of Length Parameter Inconsistency Vulnerability",
-      "timestamp": "2025-12-29"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-21T20:07:57.246880+00:00"
+      "timestamp": "2026-01-21T21:07:48.763549+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-21T20:07:56.955209+00:00"
+      "timestamp": "2026-01-21T21:07:48.630649+00:00"
     }
   ],
   "event_count": 7
