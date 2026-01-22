@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-22T18:05:44.682272+00:00",
+  "timestamp": "2026-01-22T19:07:20.815574+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,38 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2025-68645",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Synacor Zimbra Collaboration Suite (ZCS) PHP Remote File Inclusion Vulnerability",
+      "timestamp": "2026-01-22"
+    },
+    {
+      "id": "CVE-2025-34026",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Versa Concerto Improper Authentication Vulnerability",
+      "timestamp": "2026-01-22"
+    },
+    {
+      "id": "CVE-2025-31125",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Vite Vitejs Improper Access Control Vulnerability",
+      "timestamp": "2026-01-22"
+    },
+    {
+      "id": "CVE-2025-54313",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Prettier eslint-config-prettier Embedded Malicious Code Vulnerability",
+      "timestamp": "2026-01-22"
+    },
     {
       "id": "CVE-2026-20045",
       "type": "exploited",
@@ -16,44 +48,12 @@
       "timestamp": "2026-01-21"
     },
     {
-      "id": "CVE-2026-20805",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Microsoft Windows Information Disclosure Vulnerability",
-      "timestamp": "2026-01-13"
-    },
-    {
-      "id": "CVE-2025-8110",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Gogs Path Traversal Vulnerability",
-      "timestamp": "2026-01-12"
-    },
-    {
-      "id": "CVE-2009-0556",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Microsoft Office PowerPoint Code Injection Vulnerability",
-      "timestamp": "2026-01-07"
-    },
-    {
-      "id": "CVE-2025-37164",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Hewlett Packard Enterprise (HPE) OneView Code Injection Vulnerability",
-      "timestamp": "2026-01-07"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-22T18:05:44.682153+00:00"
+      "timestamp": "2026-01-22T19:07:20.815493+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-22T18:05:44.414537+00:00"
+      "timestamp": "2026-01-22T19:07:20.513499+00:00"
     }
   ],
   "event_count": 7
