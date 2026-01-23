@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-23T18:05:15.594084+00:00",
+  "timestamp": "2026-01-23T19:06:55.514840+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2024-37079",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Broadcom VMware vCenter Server Out-of-bounds Write Vulnerability",
+      "timestamp": "2026-01-23"
+    },
     {
       "id": "CVE-2025-68645",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-01-22"
     },
     {
-      "id": "CVE-2026-20045",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Cisco Unified Communications Products Code Injection Vulnerability",
-      "timestamp": "2026-01-21"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-23T18:05:15.593978+00:00"
+      "timestamp": "2026-01-23T19:06:55.514739+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-23T18:05:15.414536+00:00"
+      "timestamp": "2026-01-23T19:06:55.349174+00:00"
     }
   ],
   "event_count": 7
