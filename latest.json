@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-26T20:04:23.962705+00:00",
+  "timestamp": "2026-01-26T21:05:10.104664+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,38 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2018-14634",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Linux Kernel Integer Overflow Vulnerability",
+      "timestamp": "2026-01-26"
+    },
+    {
+      "id": "CVE-2025-52691",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "SmarterTools SmarterMail Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "timestamp": "2026-01-26"
+    },
+    {
+      "id": "CVE-2026-23760",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "SmarterTools SmarterMail Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "timestamp": "2026-01-26"
+    },
+    {
+      "id": "CVE-2026-24061",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "GNU InetUtils Argument Injection Vulnerability",
+      "timestamp": "2026-01-26"
+    },
     {
       "id": "CVE-2024-37079",
       "type": "exploited",
@@ -16,44 +48,12 @@
       "timestamp": "2026-01-23"
     },
     {
-      "id": "CVE-2025-68645",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Synacor Zimbra Collaboration Suite (ZCS) PHP Remote File Inclusion Vulnerability",
-      "timestamp": "2026-01-22"
-    },
-    {
-      "id": "CVE-2025-34026",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Versa Concerto Improper Authentication Vulnerability",
-      "timestamp": "2026-01-22"
-    },
-    {
-      "id": "CVE-2025-31125",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Vite Vitejs Improper Access Control Vulnerability",
-      "timestamp": "2026-01-22"
-    },
-    {
-      "id": "CVE-2025-54313",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Prettier eslint-config-prettier Embedded Malicious Code Vulnerability",
-      "timestamp": "2026-01-22"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-26T20:04:23.962608+00:00"
+      "timestamp": "2026-01-26T21:05:10.104534+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-26T20:04:23.701455+00:00"
+      "timestamp": "2026-01-26T21:05:09.747346+00:00"
     }
   ],
   "event_count": 7
