@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-27T21:03:09.081706+00:00",
+  "timestamp": "2026-01-27T22:04:15.931226+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-24858",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Fortinet Multiple Products Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "timestamp": "2026-01-27"
+    },
     {
       "id": "CVE-2018-14634",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-01-26"
     },
     {
-      "id": "CVE-2026-21509",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Microsoft Office Security Feature Bypass Vulnerability",
-      "timestamp": "2026-01-26"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-27T21:03:09.081620+00:00"
+      "timestamp": "2026-01-27T22:04:15.931143+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-27T21:03:08.942081+00:00"
+      "timestamp": "2026-01-27T22:04:15.796005+00:00"
     }
   ],
   "event_count": 7
