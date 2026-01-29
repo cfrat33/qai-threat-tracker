@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-29T17:13:22.824183+00:00",
+  "timestamp": "2026-01-29T18:11:13.000701+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-1281",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
+      "timestamp": "2026-01-29"
+    },
     {
       "id": "CVE-2026-24858",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-01-26"
     },
     {
-      "id": "CVE-2026-24061",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "GNU InetUtils Argument Injection Vulnerability",
-      "timestamp": "2026-01-26"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-01-29T17:13:22.824086+00:00"
+      "timestamp": "2026-01-29T18:11:13.000595+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-01-29T17:13:22.565719+00:00"
+      "timestamp": "2026-01-29T18:11:12.602021+00:00"
     }
   ],
   "event_count": 7
