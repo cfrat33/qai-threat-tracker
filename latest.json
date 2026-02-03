@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-03T17:19:01.272020+00:00",
+  "timestamp": "2026-02-03T18:17:59.417521+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -32,6 +32,14 @@
       "timestamp": "2026-02-03"
     },
     {
+      "id": "CVE-2025-40551",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+      "timestamp": "2026-02-03"
+    },
+    {
       "id": "CVE-2026-1281",
       "type": "exploited",
       "category": "KEV",
@@ -40,20 +48,12 @@
       "timestamp": "2026-01-29"
     },
     {
-      "id": "CVE-2026-24858",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Fortinet Multiple Products Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "timestamp": "2026-01-27"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-03T17:19:01.271931+00:00"
+      "timestamp": "2026-02-03T18:17:59.417424+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-03T17:19:00.540428+00:00"
+      "timestamp": "2026-02-03T18:17:58.914608+00:00"
     }
   ],
   "event_count": 7
