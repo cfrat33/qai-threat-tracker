@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-03T15:16:10.702609+00:00",
+  "timestamp": "2026-02-03T16:17:15.299550+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,30 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2021-39935",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "GitLab Community and Enterprise Editions Server-Side Request Forgery (SSRF) Vulnerability",
+      "timestamp": "2026-02-03"
+    },
+    {
+      "id": "CVE-2025-64328",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Sangoma FreePBX OS Command Injection Vulnerability",
+      "timestamp": "2026-02-03"
+    },
+    {
+      "id": "CVE-2019-19006",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": " Sangoma FreePBX Improper Authentication Vulnerability",
+      "timestamp": "2026-02-03"
+    },
     {
       "id": "CVE-2026-1281",
       "type": "exploited",
@@ -24,36 +48,12 @@
       "timestamp": "2026-01-27"
     },
     {
-      "id": "CVE-2018-14634",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Linux Kernel Integer Overflow Vulnerability",
-      "timestamp": "2026-01-26"
-    },
-    {
-      "id": "CVE-2025-52691",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SmarterTools SmarterMail Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "timestamp": "2026-01-26"
-    },
-    {
-      "id": "CVE-2026-23760",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SmarterTools SmarterMail Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "timestamp": "2026-01-26"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-03T15:16:10.702525+00:00"
+      "timestamp": "2026-02-03T16:17:15.299446+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-03T15:16:10.497164+00:00"
+      "timestamp": "2026-02-03T16:17:14.989256+00:00"
     }
   ],
   "event_count": 7
