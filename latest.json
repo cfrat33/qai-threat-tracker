@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-05T20:07:44.766844+00:00",
+  "timestamp": "2026-02-05T21:08:09.878891+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,22 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2025-11953",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "React Native Community CLI OS Command Injection Vulnerability",
+      "timestamp": "2026-02-05"
+    },
+    {
+      "id": "CVE-2026-24423",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "SmarterTools SmarterMail Missing Authentication for Critical Function Vulnerability",
+      "timestamp": "2026-02-05"
+    },
     {
       "id": "CVE-2021-39935",
       "type": "exploited",
@@ -32,28 +48,12 @@
       "timestamp": "2026-02-03"
     },
     {
-      "id": "CVE-2025-40551",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-      "timestamp": "2026-02-03"
-    },
-    {
-      "id": "CVE-2026-1281",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
-      "timestamp": "2026-01-29"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-05T20:07:44.766740+00:00"
+      "timestamp": "2026-02-05T21:08:09.878783+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-05T20:07:44.248161+00:00"
+      "timestamp": "2026-02-05T21:08:09.560908+00:00"
     }
   ],
   "event_count": 7
