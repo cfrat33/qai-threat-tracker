@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-07T18:06:15.567064+00:00",
+  "timestamp": "2026-02-07T19:07:40.792485+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -53,7 +53,7 @@
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-07T18:06:15.566959+00:00"
+      "timestamp": "2026-02-07T19:07:40.792336+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-07T18:06:15.070662+00:00"
+      "timestamp": "2026-02-07T19:07:40.628113+00:00"
     }
   ],
   "event_count": 7
