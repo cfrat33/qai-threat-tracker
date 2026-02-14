@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-13T23:24:39.123279+00:00",
+  "timestamp": "2026-02-14T01:25:24.817000+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-1731",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA) OS Command Injection Vulnerability",
+      "timestamp": "2026-02-13"
+    },
     {
       "id": "CVE-2026-20700",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-02-12"
     },
     {
-      "id": "CVE-2026-21513",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Microsoft MSHTML Framework Protection Mechanism Failure Vulnerability",
-      "timestamp": "2026-02-10"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-13T23:24:39.123179+00:00"
+      "timestamp": "2026-02-14T01:25:24.816904+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-13T23:24:38.737708+00:00"
+      "timestamp": "2026-02-14T01:25:24.582937+00:00"
     }
   ],
   "event_count": 7
