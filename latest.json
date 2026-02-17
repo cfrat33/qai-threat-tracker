@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-17T20:10:05.989281+00:00",
+  "timestamp": "2026-02-17T21:10:33.593583+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,38 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2020-7796",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Synacor Zimbra Collaboration Suite (ZCS) Server-Side Request Forgery Vulnerability",
+      "timestamp": "2026-02-17"
+    },
+    {
+      "id": "CVE-2024-7694",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "TeamT5 ThreatSonar Anti-Ransomware Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "timestamp": "2026-02-17"
+    },
+    {
+      "id": "CVE-2008-0015",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": " Microsoft Windows Video ActiveX Control Remote Code Execution Vulnerability",
+      "timestamp": "2026-02-17"
+    },
+    {
+      "id": "CVE-2026-2441",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Google Chromium CSS Use-After-Free Vulnerability",
+      "timestamp": "2026-02-17"
+    },
     {
       "id": "CVE-2026-1731",
       "type": "exploited",
@@ -16,44 +48,12 @@
       "timestamp": "2026-02-13"
     },
     {
-      "id": "CVE-2026-20700",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Apple Multiple Buffer Overflow Vulnerability",
-      "timestamp": "2026-02-12"
-    },
-    {
-      "id": "CVE-2024-43468",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Microsoft Configuration Manager SQL Injection Vulnerability",
-      "timestamp": "2026-02-12"
-    },
-    {
-      "id": "CVE-2025-15556",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Notepad++ Download of Code Without Integrity Check Vulnerability",
-      "timestamp": "2026-02-12"
-    },
-    {
-      "id": "CVE-2025-40536",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
-      "timestamp": "2026-02-12"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-17T20:10:05.989179+00:00"
+      "timestamp": "2026-02-17T21:10:33.593463+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-17T20:10:05.802115+00:00"
+      "timestamp": "2026-02-17T21:10:33.341806+00:00"
     }
   ],
   "event_count": 7
