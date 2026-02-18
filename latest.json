@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-18T15:17:10.698016+00:00",
+  "timestamp": "2026-02-18T16:19:37.382852+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,22 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2021-22175",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "GitLab Server-Side Request Forgery (SSRF) Vulnerability",
+      "timestamp": "2026-02-18"
+    },
+    {
+      "id": "CVE-2026-22769",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Dell RecoverPoint for Virtual Machines (RP4VMs) Use of Hard-coded Credentials Vulnerability",
+      "timestamp": "2026-02-18"
+    },
     {
       "id": "CVE-2020-7796",
       "type": "exploited",
@@ -32,28 +48,12 @@
       "timestamp": "2026-02-17"
     },
     {
-      "id": "CVE-2026-2441",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Google Chromium CSS Use-After-Free Vulnerability",
-      "timestamp": "2026-02-17"
-    },
-    {
-      "id": "CVE-2026-1731",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA) OS Command Injection Vulnerability",
-      "timestamp": "2026-02-13"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-18T15:17:10.697911+00:00"
+      "timestamp": "2026-02-18T16:19:37.382734+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-18T15:17:10.432619+00:00"
+      "timestamp": "2026-02-18T16:19:37.196515+00:00"
     }
   ],
   "event_count": 7
