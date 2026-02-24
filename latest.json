@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T18:19:33.478979+00:00",
+  "timestamp": "2026-02-24T19:21:37.170595+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-25108",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Soliton Systems K.K FileZen OS Command Injection Vulnerability",
+      "timestamp": "2026-02-24"
+    },
     {
       "id": "CVE-2025-49113",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-02-18"
     },
     {
-      "id": "CVE-2020-7796",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Synacor Zimbra Collaboration Suite (ZCS) Server-Side Request Forgery Vulnerability",
-      "timestamp": "2026-02-17"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-02-24T18:19:33.478895+00:00"
+      "timestamp": "2026-02-24T19:21:37.170492+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-02-24T18:19:33.351242+00:00"
+      "timestamp": "2026-02-24T19:21:36.885888+00:00"
     }
   ],
   "event_count": 7
