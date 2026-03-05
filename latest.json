@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-05T18:35:20.184481+00:00",
+  "timestamp": "2026-03-05T19:27:44.492396+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -8,44 +8,44 @@
   },
   "top_events": [
     {
-      "id": "CVE-2026-22719",
+      "id": "CVE-2017-7921",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Broadcom VMware Aria Operations Command Injection Vulnerability",
-      "timestamp": "2026-03-03"
+      "description": "Hikvision Multiple Products Improper Authentication Vulnerability",
+      "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2026-21385",
+      "id": "CVE-2021-22681",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Qualcomm Multiple Chipsets Memory Corruption Vulnerability",
-      "timestamp": "2026-03-03"
+      "description": "Rockwell Multiple Products Insufficient Protected Credentials Vulnerability",
+      "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2022-20775",
+      "id": "CVE-2023-43000",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Cisco SD-WAN Path Traversal Vulnerability",
-      "timestamp": "2026-02-25"
+      "description": "Apple Multiple products Use-After-Free Vulnerability",
+      "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2026-20127",
+      "id": "CVE-2021-30952",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability",
-      "timestamp": "2026-02-25"
+      "description": "Apple Multiple Products Integer Overflow or Wraparound Vulnerability",
+      "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2026-25108",
+      "id": "CVE-2023-41974",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Soliton Systems K.K FileZen OS Command Injection Vulnerability",
-      "timestamp": "2026-02-24"
+      "description": "Apple iOS and iPadOS Use-After-Free Vulnerability",
+      "timestamp": "2026-03-05"
     },
     {
       "id": "EPSS-HIGH-001",
@@ -53,7 +53,7 @@
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-03-05T18:35:20.184389+00:00"
+      "timestamp": "2026-03-05T19:27:44.492273+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-03-05T18:35:19.947355+00:00"
+      "timestamp": "2026-03-05T19:27:44.256329+00:00"
     }
   ],
   "event_count": 7
