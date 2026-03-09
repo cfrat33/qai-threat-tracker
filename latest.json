@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-09T19:16:28.047237+00:00",
+  "timestamp": "2026-03-09T20:07:00.791565+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,30 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2021-22054",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Omnissa Workspace ONE Server-Side Request Forgery",
+      "timestamp": "2026-03-09"
+    },
+    {
+      "id": "CVE-2025-26399",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+      "timestamp": "2026-03-09"
+    },
+    {
+      "id": "CVE-2026-1603",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Ivanti Endpoint Manager (EPM) Authentication Bypass Vulnerability",
+      "timestamp": "2026-03-09"
+    },
     {
       "id": "CVE-2017-7921",
       "type": "exploited",
@@ -24,36 +48,12 @@
       "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2023-43000",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Apple Multiple products Use-After-Free Vulnerability",
-      "timestamp": "2026-03-05"
-    },
-    {
-      "id": "CVE-2021-30952",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Apple Multiple Products Integer Overflow or Wraparound Vulnerability",
-      "timestamp": "2026-03-05"
-    },
-    {
-      "id": "CVE-2023-41974",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Apple iOS and iPadOS Use-After-Free Vulnerability",
-      "timestamp": "2026-03-05"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-03-09T19:16:28.047102+00:00"
+      "timestamp": "2026-03-09T20:07:00.791458+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-03-09T19:16:27.925991+00:00"
+      "timestamp": "2026-03-09T20:07:00.503999+00:00"
     }
   ],
   "event_count": 7
