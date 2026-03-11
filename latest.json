@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T17:18:21.868184+00:00",
+  "timestamp": "2026-03-11T18:16:50.102221+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2025-68613",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "n8n Improper Control of Dynamically-Managed Code Resources Vulnerability",
+      "timestamp": "2026-03-11"
+    },
     {
       "id": "CVE-2021-22054",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-03-05"
     },
     {
-      "id": "CVE-2021-22681",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Rockwell Multiple Products Insufficient Protected Credentials Vulnerability",
-      "timestamp": "2026-03-05"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-03-11T17:18:21.868087+00:00"
+      "timestamp": "2026-03-11T18:16:50.102117+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-03-11T17:18:21.607077+00:00"
+      "timestamp": "2026-03-11T18:16:49.780959+00:00"
     }
   ],
   "event_count": 7
