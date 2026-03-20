@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-20T15:15:23.404467+00:00",
+  "timestamp": "2026-03-20T16:13:30.795621+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -8,44 +8,44 @@
   },
   "top_events": [
     {
-      "id": "CVE-2026-20131",
+      "id": "CVE-2025-32432",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
-      "timestamp": "2026-03-19"
+      "description": "Craft CMS Code Injection Vulnerability",
+      "timestamp": "2026-03-20"
     },
     {
-      "id": "CVE-2025-66376",
+      "id": "CVE-2025-54068",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Synacor Zimbra Collaboration Suite (ZCS) Cross-Site Scripting Vulnerability",
-      "timestamp": "2026-03-18"
+      "description": "Laravel Livewire Code Injection Vulnerability",
+      "timestamp": "2026-03-20"
     },
     {
-      "id": "CVE-2026-20963",
+      "id": "CVE-2025-43510",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-      "timestamp": "2026-03-18"
+      "description": "Apple Multiple Products Improper Locking Vulnerability",
+      "timestamp": "2026-03-20"
     },
     {
-      "id": "CVE-2025-47813",
+      "id": "CVE-2025-43520",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Wing FTP Server Information Disclosure Vulnerability",
-      "timestamp": "2026-03-16"
+      "description": "Apple Multiple Products Classic Buffer Overflow Vulnerability",
+      "timestamp": "2026-03-20"
     },
     {
-      "id": "CVE-2026-3910",
+      "id": "CVE-2025-31277",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Google Chromium V8 Improper Restriction of Operations Within the Bounds of a Memory Buffer Vulnerability",
-      "timestamp": "2026-03-13"
+      "description": "Apple Multiple Products Buffer Overflow Vulnerability",
+      "timestamp": "2026-03-20"
     },
     {
       "id": "EPSS-HIGH-001",
@@ -53,7 +53,7 @@
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-03-20T15:15:23.404354+00:00"
+      "timestamp": "2026-03-20T16:13:30.795524+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-03-20T15:15:23.291366+00:00"
+      "timestamp": "2026-03-20T16:13:30.642497+00:00"
     }
   ],
   "event_count": 7
