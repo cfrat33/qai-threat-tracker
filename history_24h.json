@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-03-19T11:13:28.201839+00:00",
-    "composite_score": 66.36,
-    "category_scores": {
-      "CVE": 54.75,
-      "KEV": 76.5,
-      "EPSS": 62.05
-    }
-  },
-  {
     "timestamp": "2026-03-19T12:10:40.775101+00:00",
     "composite_score": 66.36,
     "category_scores": {
@@ -208,6 +199,15 @@
   },
   {
     "timestamp": "2026-03-20T10:11:41.810653+00:00",
+    "composite_score": 66.36,
+    "category_scores": {
+      "CVE": 54.75,
+      "KEV": 76.5,
+      "EPSS": 62.05
+    }
+  },
+  {
+    "timestamp": "2026-03-20T11:10:27.075446+00:00",
     "composite_score": 66.36,
     "category_scores": {
       "CVE": 54.75,
