@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T19:16:57.633662+00:00",
+  "timestamp": "2026-03-27T20:09:08.303401+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2025-53521",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "F5 BIG-IP Unspecified Vulnerability",
+      "timestamp": "2026-03-27"
+    },
     {
       "id": "CVE-2026-33634",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-03-20"
     },
     {
-      "id": "CVE-2025-43510",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Apple Multiple Products Improper Locking Vulnerability",
-      "timestamp": "2026-03-20"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-03-27T19:16:57.633544+00:00"
+      "timestamp": "2026-03-27T20:09:08.303301+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-03-27T19:16:57.441299+00:00"
+      "timestamp": "2026-03-27T20:09:07.885431+00:00"
     }
   ],
   "event_count": 7
