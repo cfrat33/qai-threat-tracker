@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-01T19:24:17.819103+00:00",
+  "timestamp": "2026-04-01T20:13:10.758204+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-5281",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Google Dawn Use-After-Free Vulnerability",
+      "timestamp": "2026-04-01"
+    },
     {
       "id": "CVE-2026-3055",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-03-25"
     },
     {
-      "id": "CVE-2025-32432",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Craft CMS Code Injection Vulnerability",
-      "timestamp": "2026-03-20"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-04-01T19:24:17.819022+00:00"
+      "timestamp": "2026-04-01T20:13:10.758116+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-04-01T19:24:17.122562+00:00"
+      "timestamp": "2026-04-01T20:13:10.545585+00:00"
     }
   ],
   "event_count": 7
