@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-02T19:20:21.865945+00:00",
+  "timestamp": "2026-04-02T20:10:24.048564+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-3502",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "TrueConf Client Download of Code Without Integrity Check Vulnerability",
+      "timestamp": "2026-04-02"
+    },
     {
       "id": "CVE-2026-5281",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-03-26"
     },
     {
-      "id": "CVE-2026-33017",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Langflow Code Injection Vulnerability",
-      "timestamp": "2026-03-25"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-04-02T19:20:21.865862+00:00"
+      "timestamp": "2026-04-02T20:10:24.048471+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-04-02T19:20:21.609137+00:00"
+      "timestamp": "2026-04-02T20:10:23.876736+00:00"
     }
   ],
   "event_count": 7
