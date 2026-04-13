@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-13T17:23:20.867243+00:00",
+  "timestamp": "2026-04-13T18:24:39.166935+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -8,44 +8,44 @@
   },
   "top_events": [
     {
-      "id": "CVE-2026-1340",
+      "id": "CVE-2012-1854",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
-      "timestamp": "2026-04-08"
+      "description": "Microsoft Visual Basic for Applications Insecure Library Loading Vulnerability",
+      "timestamp": "2026-04-13"
     },
     {
-      "id": "CVE-2026-35616",
+      "id": "CVE-2025-60710",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Fortinet FortiClient EMS Improper Access Control Vulnerability",
-      "timestamp": "2026-04-06"
+      "description": "Microsoft Windows Link Following Vulnerability",
+      "timestamp": "2026-04-13"
     },
     {
-      "id": "CVE-2026-3502",
+      "id": "CVE-2023-21529",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "TrueConf Client Download of Code Without Integrity Check Vulnerability",
-      "timestamp": "2026-04-02"
+      "description": "Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability",
+      "timestamp": "2026-04-13"
     },
     {
-      "id": "CVE-2026-5281",
+      "id": "CVE-2023-36424",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Google Dawn Use-After-Free Vulnerability",
-      "timestamp": "2026-04-01"
+      "description": "Microsoft Windows Out-of-Bounds Read Vulnerability",
+      "timestamp": "2026-04-13"
     },
     {
-      "id": "CVE-2026-3055",
+      "id": "CVE-2020-9715",
       "type": "exploited",
       "category": "KEV",
       "severity": 9.0,
-      "description": "Citrix NetScaler Out-of-Bounds Read Vulnerability",
-      "timestamp": "2026-03-30"
+      "description": "Adobe Acrobat Use-After-Free Vulnerability",
+      "timestamp": "2026-04-13"
     },
     {
       "id": "EPSS-HIGH-001",
@@ -53,7 +53,7 @@
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-04-13T17:23:20.867142+00:00"
+      "timestamp": "2026-04-13T18:24:39.166828+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-04-13T17:23:20.324515+00:00"
+      "timestamp": "2026-04-13T18:24:39.031707+00:00"
     }
   ],
   "event_count": 7
