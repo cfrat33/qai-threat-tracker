@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-28T16:35:35.370441+00:00",
+  "timestamp": "2026-04-28T17:33:20.132727+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,22 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2024-1708",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "ConnectWise ScreenConnect Path Traversal Vulnerability",
+      "timestamp": "2026-04-28"
+    },
+    {
+      "id": "CVE-2026-32202",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Microsoft Windows Protection Mechanism Failure Vulnerability",
+      "timestamp": "2026-04-28"
+    },
     {
       "id": "CVE-2025-29635",
       "type": "exploited",
@@ -32,28 +48,12 @@
       "timestamp": "2026-04-24"
     },
     {
-      "id": "CVE-2024-57726",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SimpleHelp Missing Authorization Vulnerability",
-      "timestamp": "2026-04-24"
-    },
-    {
-      "id": "CVE-2026-39987",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Marimo Remote Code Execution Vulnerability",
-      "timestamp": "2026-04-23"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-04-28T16:35:35.370328+00:00"
+      "timestamp": "2026-04-28T17:33:20.132621+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-04-28T16:35:35.160620+00:00"
+      "timestamp": "2026-04-28T17:33:20.000920+00:00"
     }
   ],
   "event_count": 7
