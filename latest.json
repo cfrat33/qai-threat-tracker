@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T16:31:07.376160+00:00",
+  "timestamp": "2026-04-30T17:30:16.735936+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-41940",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+      "timestamp": "2026-04-30"
+    },
     {
       "id": "CVE-2024-1708",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-04-24"
     },
     {
-      "id": "CVE-2024-57728",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "SimpleHelp Path Traversal Vulnerability",
-      "timestamp": "2026-04-24"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-04-30T16:31:07.376055+00:00"
+      "timestamp": "2026-04-30T17:30:16.735845+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-04-30T16:31:07.203424+00:00"
+      "timestamp": "2026-04-30T17:30:16.600567+00:00"
     }
   ],
   "event_count": 7
