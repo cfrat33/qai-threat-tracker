@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T19:27:49.884208+00:00",
+  "timestamp": "2026-05-01T20:17:53.278437+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-31431",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "timestamp": "2026-05-01"
+    },
     {
       "id": "CVE-2026-41940",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-04-24"
     },
     {
-      "id": "CVE-2024-7399",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "Samsung MagicINFO 9 Server Path Traversal Vulnerability",
-      "timestamp": "2026-04-24"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-05-01T19:27:49.884092+00:00"
+      "timestamp": "2026-05-01T20:17:53.278356+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-05-01T19:27:49.533354+00:00"
+      "timestamp": "2026-05-01T20:17:52.831361+00:00"
     }
   ],
   "event_count": 7
