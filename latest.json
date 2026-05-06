@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-06T17:31:59.270193+00:00",
+  "timestamp": "2026-05-06T18:32:54.157819+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-0300",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
+      "timestamp": "2026-05-06"
+    },
     {
       "id": "CVE-2026-31431",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-04-28"
     },
     {
-      "id": "CVE-2025-29635",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "D-Link DIR-823X Command Injection Vulnerability",
-      "timestamp": "2026-04-24"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-05-06T17:31:59.270095+00:00"
+      "timestamp": "2026-05-06T18:32:54.157711+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-05-06T17:31:59.061274+00:00"
+      "timestamp": "2026-05-06T18:32:53.670896+00:00"
     }
   ],
   "event_count": 7
