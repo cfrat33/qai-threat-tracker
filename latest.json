@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-08T16:29:58.995105+00:00",
+  "timestamp": "2026-05-08T17:30:17.627296+00:00",
   "composite_score": 66.36,
   "category_scores": {
     "CVE": 54.75,
@@ -7,6 +7,14 @@
     "EPSS": 62.05
   },
   "top_events": [
+    {
+      "id": "CVE-2026-42208",
+      "type": "exploited",
+      "category": "KEV",
+      "severity": 9.0,
+      "description": "BerriAI LiteLLM SQL Injection Vulnerability",
+      "timestamp": "2026-05-08"
+    },
     {
       "id": "CVE-2026-6973",
       "type": "exploited",
@@ -40,20 +48,12 @@
       "timestamp": "2026-04-30"
     },
     {
-      "id": "CVE-2024-1708",
-      "type": "exploited",
-      "category": "KEV",
-      "severity": 9.0,
-      "description": "ConnectWise ScreenConnect Path Traversal Vulnerability",
-      "timestamp": "2026-04-28"
-    },
-    {
       "id": "EPSS-HIGH-001",
       "type": "epss",
       "category": "EPSS",
       "severity": 8.5,
       "description": "High EPSS score indicator (sample data)",
-      "timestamp": "2026-05-08T16:29:58.994987+00:00"
+      "timestamp": "2026-05-08T17:30:17.627205+00:00"
     },
     {
       "id": "SYNTHETIC-001",
@@ -61,7 +61,7 @@
       "category": "CVE",
       "severity": 7.5,
       "description": "Sample vulnerability (NVD fetch failed)",
-      "timestamp": "2026-05-08T16:29:58.705584+00:00"
+      "timestamp": "2026-05-08T17:30:16.951325+00:00"
     }
   ],
   "event_count": 7
